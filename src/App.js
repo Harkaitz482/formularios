@@ -3,10 +3,10 @@ import './App.css';
 import './component/formularioPregunta'
 import FormularioPregunta from './component/formularioPregunta';
 import PreguntaCreada from './component/preguntaCreada';
-import { useState } from 'react';
+import { createContext, useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-
+export const  CharactersContext = createContext();
 function App() {
   let idActualPregunta = 1
   const [preguntas, setPreguntas] = useState([]);
@@ -17,6 +17,9 @@ function App() {
     idActualPregunta++;
     setPreguntas([...preguntas, nueva]);
   }
+  <QuestionProvider>
+    <App />
+</QuestionProvider>
 
   const borrarpregunta = (id) => {
     setPreguntas(preguntas.filter(p => p.id !== id));
