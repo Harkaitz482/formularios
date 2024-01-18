@@ -17,9 +17,7 @@ function App() {
     idActualPregunta++;
     setPreguntas([...preguntas, nueva]);
   }
-  <QuestionProvider>
-    <App />
-</QuestionProvider>
+ 
 
   const borrarpregunta = (id) => {
     setPreguntas(preguntas.filter(p => p.id !== id));
